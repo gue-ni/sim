@@ -7,12 +7,27 @@
 
 
 #include <GLFW/glfw3.h>
+#include "controller/Button.h"
+#include "controller/Mouse.h"
+#include "controller/Joystick.h"
+
 
 class InputHandler {
 public:
-    static bool buttonPressed(int key);
-    static bool buttonHeld(int key);
-    static GLFWwindow* window;
+    static Button *w;
+    static Button *a;
+    static Button *s;
+    static Button *d;
+
+    static Mouse *mouse;
+    static Joystick *joystick;
+
+
+
+
+    static void init(GLFWwindow *window);
+
+
 };
 
 

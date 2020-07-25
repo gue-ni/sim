@@ -3,11 +3,11 @@
 //
 
 #include "Factory.h"
-#include "input/AirplaneInput.h"
+#include "input/Input.h"
 #include "graphics/Graphics.h"
 #include "physics/Physics.h"
 #include "entities/Entity.h"
 
 Entity *Factory::entity(int id) {
-    return new Entity(new AirplaneInput, new Graphics, new Physics, id);
+    return new Entity(new Input, new Graphics, new Physics, id);
 }

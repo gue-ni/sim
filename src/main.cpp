@@ -7,6 +7,7 @@
 #include "entities/Entity.h"
 #include "Factory.h"
 #include "Game.h"
+#include "input/controller/Mouse.h"
 #include "input/InputHandler.h"
 
 
@@ -38,6 +39,9 @@ int main() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
+    glfwSetCursorPosCallback(window, Mouse::mouse_callback);
+    glfwSetScrollCallback(window, Mouse::scroll_callback);
+
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -49,7 +53,7 @@ int main() {
     int nbFrames = 0;
     double lastTime = glfwGetTime();
 
-    InputHandler::window = window;
+    InputHandler::init(window);
 
     for (int i = 0; i < 5; i++) game.create();
 

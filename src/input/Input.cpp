@@ -5,10 +5,10 @@
 
 #include <iostream>
 #include "Input.h"
+#include "InputHandler.h"
 
 void Input::update(Entity* entity) {
-    //printf("Input %p\n", entity);
-    if (InputHandler2::buttonHeld(GLFW_KEY_W)){
+    if (InputHandler::w->pressed()){
         std::cout << "pressed W\n";
     }
 }

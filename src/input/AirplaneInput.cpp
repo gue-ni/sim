@@ -7,7 +7,5 @@
 #include "InputHandler.h"
 
 void AirplaneInput::update(Entity *entity) {
-    if (InputHandler::buttonHeld(GLFW_KEY_W)){
-        std::cout << "pressed W\n";
-    }
+
 }
