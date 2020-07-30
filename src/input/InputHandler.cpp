@@ -25,7 +25,5 @@ void InputHandler::init(GLFWwindow *window) {
         int count;
         const unsigned char *buttons = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &count);
         button1 = new JoystickButton(0, window, buttons);
-
-
     }
 }

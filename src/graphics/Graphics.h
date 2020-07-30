@@ -12,12 +12,10 @@ class Shader;
 
 class Graphics : public Component {
 public:
-    Graphics(Shader *shader);
+    explicit Graphics(Shader *shader);
     void update(Entity* entity) override;
 private:
     Shader *shader;
 };
-
-
 
 #endif //ARCHITECTURE_GRAPHICS_H

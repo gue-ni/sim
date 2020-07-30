@@ -5,7 +5,6 @@
 #ifndef ARCHITECTURE_COMPONENT_H
 #define ARCHITECTURE_COMPONENT_H
 
-
 class Entity;
 class Component {
 public:

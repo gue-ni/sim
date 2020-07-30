@@ -38,7 +38,7 @@ void Entity::setCameras(std::vector<Camera *>& cams) {
 
 Camera *Entity::getCamera() {
     // TODO implement
-    return nullptr;
+    return cameras[0];
 }
 
 void Entity::toggleCamera() {

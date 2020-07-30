@@ -16,6 +16,8 @@ void Input::update(Entity* entity) {
         std::cout << "held S\n";
     }
 
+    std::cout << InputHandler::mouse->getYOffset() << std::endl;
+
     
 }
 

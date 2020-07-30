@@ -22,7 +22,7 @@ public:
     void draw();
 
 private:
-    Factory factory;
+    Factory *factory;
     std::vector<int> removeables;
     std::map<int, Entity*> entities;
     int num_entites = 0;

@@ -5,7 +5,6 @@
 #include <iostream>
 #include "Game.h"
 #include "entities/Entity.h"
-#include "Factory.h"
 
 
 void Game::remove(int id){
@@ -16,7 +15,7 @@ void Game::remove(int id){
 
 Entity* Game::create(){
     int id = num_entites++;
-    Entity *e = factory.entity(id);
+    Entity *e = factory->entity(id);
     entities.insert({id, e});
     return e;
 }
@@ -36,11 +35,6 @@ void Game::update(double dt) {
         remove(id);
         removeables.clear();
     }
-
-
-
-
-
 }
 
 void Game::draw() {
@@ -53,12 +47,13 @@ void Game::draw() {
 }
 
 Entity *Game::getActive() {
-    return nullptr;
+    return entities[0];
 }
 
 Game::Game() {
-
+    factory = new Factory();
 
 }
+
 
 

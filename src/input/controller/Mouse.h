@@ -9,13 +9,17 @@
 
 class Mouse {
 public:
-    float getXOffset();
-    float getYOffset();
+    double getXOffset();
+    double getYOffset();
     static void cursor_callback(GLFWwindow* window, double xpos, double ypos);
     static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 private:
-    float xOffset, yOffset;
+    static bool firstMouse;
+    double xOffset, yOffset;
+    static double lastX, lastY;
+    static double xoffset, yoffset;
+    static double zoom;
 };
 
 
