@@ -10,12 +10,15 @@
 class Button {
 public:
     Button(int key, GLFWwindow *w);
-    bool held();
-    bool pressed();
 
-private:
+    virtual bool held();
+
+    virtual bool pressed();
+
+protected:
     int key;
     double disabled;
+    double spacing = 0.2;
     GLFWwindow *window;
 
 };

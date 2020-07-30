@@ -9,5 +9,10 @@
 #include "entities/Entity.h"
 
 Entity *Factory::entity(int id) {
-    return new Entity(new Input, new Graphics, new Physics, id);
+    return new Entity(new Input, new Graphics(standardShader), new Physics, id);
+}
+
+Factory::Factory() {
+    // TODO compile shader
+
 }

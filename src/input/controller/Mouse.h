@@ -11,7 +11,7 @@ class Mouse {
 public:
     float getXOffset();
     float getYOffset();
-    static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+    static void cursor_callback(GLFWwindow* window, double xpos, double ypos);
     static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 private:

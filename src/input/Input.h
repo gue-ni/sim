@@ -13,8 +13,6 @@
 class Input : public Component {
 public:
     void update(Entity* entity) override;
-
-
 };
 
 

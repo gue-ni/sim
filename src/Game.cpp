@@ -16,12 +16,12 @@ void Game::remove(int id){
 
 Entity* Game::create(){
     int id = num_entites++;
-    Entity *e = Factory::entity(id);
+    Entity *e = factory.entity(id);
     entities.insert({id, e});
     return e;
 }
 
-void Game::update(float dt) {
+void Game::update(double dt) {
     for (auto e : entities){
         auto entity = e.second;
         entity->update(dt);
@@ -37,12 +37,27 @@ void Game::update(float dt) {
         removeables.clear();
     }
 
+
+
+
+
+}
+
+void Game::draw() {
+    // TODO draw terrain
+    // TODO draw particles
+
     for (auto e : entities){
         e.second->draw();
     }
+}
 
-    // TODO draw terrain
-    // TODO draw particles
+Entity *Game::getActive() {
+    return nullptr;
+}
+
+Game::Game() {
+
 
 }
 

@@ -7,3 +7,5 @@
 void Graphics::update(Entity* entity) {
     //printf("Graphics %p\n", entity);
 }
+
+Graphics::Graphics(Shader *shader) : shader(shader) {}

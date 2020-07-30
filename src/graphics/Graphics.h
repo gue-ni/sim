@@ -8,9 +8,14 @@
 #include <cstdio>
 #include "../Component.h"
 
+class Shader;
+
 class Graphics : public Component {
 public:
+    Graphics(Shader *shader);
     void update(Entity* entity) override;
+private:
+    Shader *shader;
 };
 
 

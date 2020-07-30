@@ -12,8 +12,7 @@
 #include "../input/Input.h"
 #include "../graphics/Graphics.h"
 #include "../physics/Physics.h"
-
-
+#include "../camera/Camera.h"
 
 class Entity {
 public:
@@ -22,6 +21,9 @@ public:
     virtual void draw();
     virtual void collision();
 
+    void setCameras(std::vector<Camera*>& cams);
+    Camera* getCamera();
+    void toggleCamera();
     int getId() const ;
     bool isActive() const;
 
@@ -31,6 +33,7 @@ private:
     Input *input;
     Physics *physics;
     Graphics *graphics;
+    std::vector<Camera*> cameras;
 };
 
 

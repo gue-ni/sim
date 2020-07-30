@@ -6,10 +6,14 @@
 #define ARCHITECTURE_FACTORY_H
 
 
+class Shader;
 class Entity;
 class Factory {
 public:
-    static Entity *entity(int id);
+    Factory();
+    Entity *entity(int id);
+
+    Shader *standardShader;
 };
 
 

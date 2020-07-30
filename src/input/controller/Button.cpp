@@ -10,7 +10,7 @@ bool Button::pressed() {
     double now = glfwGetTime();
     bool result = glfwGetKey(window, key) == GLFW_PRESS && now > disabled;
     if (result)
-        disabled = now + 0.2;
+        disabled = now + spacing;
     return result;
 }
 

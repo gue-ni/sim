@@ -12,7 +12,4 @@ public:
     virtual void update(Entity* entity);
 };
 
-
-
-
 #endif //ARCHITECTURE_COMPONENT_H

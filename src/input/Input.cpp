@@ -11,6 +11,12 @@ void Input::update(Entity* entity) {
     if (InputHandler::w->pressed()){
         std::cout << "pressed W\n";
     }
+
+    if (InputHandler::s->held()){
+        std::cout << "held S\n";
+    }
+
+    
 }
 
 

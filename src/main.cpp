@@ -20,7 +20,7 @@ void processInput(GLFWwindow *window);
 
 const unsigned int SCR_WIDTH    = 640;
 const unsigned int SCR_HEIGHT   = 480;
-float deltaTime = 0.0f, lastFrame = 0.0f;
+double deltaTime = 0.0, lastFrame = 0.0;
 
 Game game;
 
@@ -39,7 +39,7 @@ int main() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    glfwSetCursorPosCallback(window, Mouse::mouse_callback);
+    glfwSetCursorPosCallback(window, Mouse::cursor_callback);
     glfwSetScrollCallback(window, Mouse::scroll_callback);
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
@@ -57,8 +57,11 @@ int main() {
 
     for (int i = 0; i < 5; i++) game.create();
 
+    Entity* active = nullptr;
+    Camera* activeCamera = nullptr;
+
     while(!glfwWindowShouldClose(window)){
-        float currentFrame = glfwGetTime();
+        double currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
 
         nbFrames++;
@@ -72,6 +75,14 @@ int main() {
         processInput(window);
 
         game.update(deltaTime);
+
+        active = game.getActive();
+        activeCamera = active->getCamera();
+
+        glm::dmat4 view = activeCamera->getView();
+        glm::dmat4 projection = activeCamera->getProjection();
+
+        game.draw();
 
         glfwSwapBuffers(window);
         glfwPollEvents();

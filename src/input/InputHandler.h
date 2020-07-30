@@ -10,6 +10,7 @@
 #include "controller/Button.h"
 #include "controller/Mouse.h"
 #include "controller/Joystick.h"
+#include "controller/JoystickButton.h"
 
 
 class InputHandler {
@@ -22,7 +23,7 @@ public:
     static Mouse *mouse;
     static Joystick *joystick;
 
-
+    static JoystickButton *button1;
 
 
     static void init(GLFWwindow *window);

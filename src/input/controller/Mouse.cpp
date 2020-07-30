@@ -4,7 +4,7 @@
 
 #include "Mouse.h"
 
-void Mouse::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
+void Mouse::cursor_callback(GLFWwindow *window, double xpos, double ypos) {
 
 }
 
